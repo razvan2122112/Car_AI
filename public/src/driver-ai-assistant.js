@@ -7,8 +7,8 @@ const CarAI = () => {
   const [voiceCommand, setVoiceCommand] = useState('');
   const [isNavActive, setIsNavActive] = useState(false);
   const [alerts, setAlerts] = useState([
-    { id: 1, type: 'fuel', message: 'Niveau carburant faible - Station à 2km', priority: 'medium' },
-    { id: 2, type: 'maintenance', message: 'Révision dans 500km', priority: 'low' }
+    { id: 1, type: 'fuel', message: 'Niveau carburant faible - Station a 2km', priority: 'medium' },
+    { id: 2, type: 'maintenance', message: 'Revision dans 500km', priority: 'low' }
   ]);
 
   const [vehicleData, setVehicleData] = useState({
@@ -22,7 +22,7 @@ const CarAI = () => {
   const toggleVoice = () => {
     setIsListening(!isListening);
     if (!isListening) {
-      setVoiceCommand('Écoute en cours...');
+      setVoiceCommand('Ecoute en cours...');
       setTimeout(() => setVoiceCommand(''), 3000);
     } else {
       setVoiceCommand('');
@@ -32,7 +32,7 @@ const CarAI = () => {
   const handleVoiceCommand = (command) => {
     setVoiceCommand(`"${command}"`);
     setTimeout(() => {
-      setVoiceCommand('Commande traitée ✓');
+      setVoiceCommand('Commande traitee ✓');
       setTimeout(() => setVoiceCommand(''), 2000);
     }, 1500);
   };
@@ -41,7 +41,7 @@ const CarAI = () => {
     'Trouve une station essence',
     'Appelle Marie',
     'Navigation domicile',
-    'Météo destination',
+    'Meteo destination',
     'Musique jazz',
     'Messages non lus'
   ];
@@ -119,14 +119,14 @@ const CarAI = () => {
             <span className="font-medium">{vehicleData.distance}</span>
           </div>
           <div className="flex justify-between">
-            <span>Temps estimé:</span>
+            <span>Temps estime:</span>
             <span className="font-medium">{vehicleData.eta}</span>
           </div>
         </div>
       </div>
       
       <div className="bg-yellow-50 p-3 rounded-lg border border-yellow-200">
-        <p className="text-sm">🚧 Ralentissement à 3km - +5min</p>
+        <p className="text-sm">🚧 Ralentissement a 3km - +5min</p>
       </div>
       
       <div className="space-y-2">
@@ -162,7 +162,7 @@ const CarAI = () => {
         </h3>
         <div className="space-y-2 text-sm">
           <div className="flex justify-between">
-            <span>Prochaine révision:</span>
+            <span>Prochaine revision:</span>
             <span>500 km</span>
           </div>
           <div className="flex justify-between">
@@ -184,7 +184,7 @@ const CarAI = () => {
 
   return (
     <div className="max-w-md mx-auto bg-black text-white min-h-screen">
-      {/* En-tête */}
+      {/* En-tete */}
       <div className="bg-gray-900 p-4 flex items-center justify-between">
         <h1 className="text-xl font-bold">CarAI</h1>
         <div className="flex items-center space-x-2">
@@ -203,7 +203,7 @@ const CarAI = () => {
             } hover:opacity-80 transition-all`}
           >
             {isListening ? <MicOff className="w-5 h-5" /> : <Mic className="w-5 h-5" />}
-            <span>{isListening ? 'Arrêter' : 'Parler'}</span>
+            <span>{isListening ? 'Arreter' : 'Parler'}</span>
           </button>
           
           {voiceCommand && (
@@ -232,7 +232,7 @@ const CarAI = () => {
         {[
           { id: 'dashboard', name: 'Accueil', icon: Car },
           { id: 'navigation', name: 'Navigation', icon: Navigation },
-          { id: 'vehicle', name: 'Véhicule', icon: Settings }
+          { id: 'vehicle', name: 'Vehicule', icon: Settings }
         ].map(({ id, name, icon: Icon }) => (
           <button
             key={id}
